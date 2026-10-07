@@ -1,1 +1,42 @@
+name: Tarefa
+description: Planejar uma unidade de trabalho da Chouga 2.0
+title: ""
+labels: []
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: O que deve ser alcançado?
+    validations:
+      required: true
 
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Por que esta tarefa existe?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo
+      description: O que faz parte desta tarefa?
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Fora de escopo
+      description: O que deliberadamente não será feito?
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Como saberemos que a tarefa terminou?
+    validations:
+      required: true
