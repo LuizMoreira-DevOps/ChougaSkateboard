@@ -359,18 +359,4 @@ A decisão de publicar continua humana.
 O versionamento existe para tornar a evolução do produto compreensível, rastreável e reproduzível.
 A automação deve eliminar trabalho mecânico sem retirar controle sobre a publicação.
 
-| Integrar com disciplina, versionar automaticamente e publicar conscientemente.
-
-
-Tem uma diferença importante em relação à primeira versão do documento: agora ele não descreve apenas **“como gostaríamos de trabalhar”**. Ele documenta o sistema que já existe:
-
-```text
-Squash Merge
-+
-Conventional Commits
-+
-Release Please
-+
-SemVer
-+
-Release PR
+> Integrar com disciplina, versionar automaticamente e publicar conscientemente.
