@@ -1,0 +1,41 @@
+name: Bug
+description: Registrar um comportamento incorreto
+title: "[Bug] "
+labels:
+  - "type:bug"
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: O que está acontecendo?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Como reproduzir
+      description: Passos mínimos para reproduzir o problema.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências
+      description: Logs, prints, erros ou outras informações úteis.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: O que precisa estar verdadeiro para considerarmos o bug corrigido?
+    validations:
+      required: true
