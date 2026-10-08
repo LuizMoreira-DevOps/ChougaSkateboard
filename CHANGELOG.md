@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.3.0...v0.4.0) (2026-10-08)
+
+
+### Features
+
+* refine hero visual identity ([7bca922](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/7bca922187f25ea4b323d5c3b9eea551649f96be))
+
 ## [0.3.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.2.0...v0.3.0) (2026-10-08)
 
 
