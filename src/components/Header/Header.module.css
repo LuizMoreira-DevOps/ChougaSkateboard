@@ -1,6 +1,6 @@
 .header {
     width: min(100% - (var(--page-padding) * 2), var(--content-width));
-    min-height: 5rem;
+    min-height: 5.5rem;
     margin: 0 auto;
 
     display: flex;
@@ -12,28 +12,94 @@
 }
 
 .brand {
-    font-size: 1.25rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    line-height: 1;
+}
+
+.brandName {
+    font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.07em;
+}
+
+.brandDescriptor {
+    margin-top: 0.2rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.75rem;
+}
 
-    font-size: 0.875rem;
-    font-weight: 600;
+.nav a {
+    position: relative;
+
+    padding: 0.5rem 0;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: 0.2rem;
+    left: 0;
+
+    height: 1px;
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 180ms ease;
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.brand:focus-visible,
+.nav a:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 4px;
 }
 
 @media (max-width: 640px) {
     .header {
-        min-height: 4.5rem;
+        min-height: 4.75rem;
+        gap: 1rem;
+    }
+
+    .brandName {
+        font-size: 1.25rem;
+    }
+
+    .brandDescriptor {
+        font-size: 0.55rem;
     }
 
     .nav {
-        gap: 0.75rem;
-        font-size: 0.7rem;
+        gap: 0.875rem;
+    }
+
+    .nav a {
+        font-size: 0.625rem;
     }
 }

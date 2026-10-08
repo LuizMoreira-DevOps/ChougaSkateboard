@@ -7,9 +7,10 @@ export function Header() {
             <Link
                 className={styles.brand}
                 href="/"
-                aria-label="Chouga Skateboard"
+                aria-label="Chouga Skateboard - página inicial"
             >
-                CHOUGA
+                <span className={styles.brandName}>CHOUGA</span>
+                <span className={styles.brandDescriptor}>Skateboard</span>
             </Link>
 
             <nav className={styles.nav} aria-label="Navegação principal">
