@@ -233,16 +233,6 @@ O adaptador traduz o fornecedor para conceitos que façam sentido para a Chouga.
 Exemplo conceitual:
 
 ```text
-Shopify Product
-      ↓
-Shopify Adapter
-      ↓
-Product
-```
-
-ou:
-
-```text
 Nuvemshop Product
        ↓
 Nuvemshop Adapter
@@ -373,11 +363,11 @@ A plataforma comercial não deve obrigatoriamente determinar:
 - Wheels;
 - páginas institucionais.
 
-O storefront deve consumir dados dos módulos e apresentar uma experiência própria.
+O storefront utilizará **Next.js com App Router**, conforme definido no ADR-002.
 
-A hipótese atual de framework será decidida separadamente.
+React e TypeScript continuam sendo a base da interface, enquanto o Next.js fornece a infraestrutura de aplicação necessária para roteamento, renderização, metadata e integração server-side quando necessário.
 
-Next.js é candidato, não decisão arquitetural definitiva enquanto não houver ADR.
+O framework deve permanecer como infraestrutura e não substituir os limites de domínio da Chouga.
 
 ---
 
@@ -934,9 +924,7 @@ Consideramos atualmente decisões:
 
 Ainda precisam ser confirmadas:
 
-- Shopify ou Nuvemshop;
 - Sanity como solução editorial definitiva;
-- Next.js como framework;
 - estratégia de estilos;
 - hospedagem;
 - observabilidade;
