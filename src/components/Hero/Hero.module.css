@@ -1,36 +1,117 @@
 .hero {
-    max-width: 64rem;
+    position: relative;
+
+    width: 100%;
+    min-height: 34rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+
     padding: 6rem 0;
 }
 
+.heroContent {
+    max-width: 64rem;
+}
+
 .heroEyebrow {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+
     font-family: var(--font-mono);
     font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.heroTitle {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 10ch;
+
+    font-size: clamp(4rem, 11vw, 9.5rem);
+    font-weight: 800;
+    line-height: 0.78;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.heroTitle span {
+    margin-left: clamp(1.5rem, 6vw, 6rem);
+
+    font-family: var(--font-mono);
+    font-size: 0.28em;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.12em;
+}
+
+.heroTagline {
+    max-width: 32rem;
+    margin-top: 2.5rem;
+
+    color: var(--muted);
+
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+}
+
+.heroIndex {
+    align-self: flex-end;
+
+    padding-bottom: 0.75rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.heroMeta {
+    width: min(100%, 32rem);
+    margin-top: 3rem;
+    padding-top: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    border-top: 1px solid var(--border);
+
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.hero h1 {
-    max-width: 10ch;
-    font-size: clamp(3.5rem, 10vw, 9rem);
-    font-weight: 800;
-    line-height: 0.85;
-    letter-spacing: -0.08em;
-    text-transform: uppercase;
-}
-
-.heroTagline {
-    max-width: 32rem;
-    margin-top: 2rem;
-    color: var(--muted);
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.5;
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .hero {
-        padding: 4rem 0;
+        min-height: auto;
+        padding: 4.5rem 0;
+
+        align-items: flex-start;
+    }
+
+    .heroTitle {
+        font-size: clamp(3.5rem, 16vw, 6rem);
+    }
+
+    .heroTitle span {
+        margin-left: 1rem;
+    }
+
+    .heroIndex {
+        display: none;
+    }
+
+    .heroMeta {
+        margin-top: 2rem;
+
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }

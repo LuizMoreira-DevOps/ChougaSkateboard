@@ -3,12 +3,28 @@ import styles from "./Hero.module.css";
 export function Hero() {
     return (
         <section className={styles.hero}>
-            <p className={styles.eyebrow}>Skate · Streetwear · Cultura</p>
+            <div className={styles.heroContent}>
+                <p className={styles.heroEyebrow}>
+                    Skate · Streetwear · Cultura
+                </p>
 
-            <h1>Chouga Skateboard</h1>
+                <h1 className={styles.heroTitle}>
+                    Chouga
+                    <span>Skateboard</span>
+                </h1>
 
-            <p className={styles.tagline}>
-                Loja limpa. Conteúdo sujo. Engenharia limpa.
+                <p className={styles.heroTagline}>
+                    Loja limpa. Conteúdo sujo. Engenharia limpa.
+                </p>
+
+                <div className={styles.heroMeta}>
+                    <span>Commerce + Culture</span>
+                    <span>Chouga 2.0</span>
+                </div>
+            </div>
+
+            <p className={styles.heroIndex} aria-hidden="true">
+                01
             </p>
         </section>
     );
