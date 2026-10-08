@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.2.0...v0.3.0) (2026-10-08)
+
+
+### Features
+
+* refine header visual identity ([15d2da0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/15d2da0fc273020be3c5d62a56f585ac2451d5be))
+
 ## [0.2.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.1.0...v0.2.0) (2026-10-08)
 
 
