@@ -1,59 +1,59 @@
 name: CI
 
 on:
-  pull_request:
-    branches:
-      - main
+    pull_request:
+        branches:
+            - main
 
 permissions:
-  contents: read
+    contents: read
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  quality:
-    name: Quality
-    runs-on: ubuntu-latest
+    quality:
+        name: Quality
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
+            - name: Setup Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+                  cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Lint
-        run: npm run lint
+            - name: Lint
+              run: npm run lint
 
-      - name: Typecheck
-        run: npm run typecheck
+            - name: Typecheck
+              run: npm run typecheck
 
-      - name: Build
-        run: npm run build
+            - name: Build
+              run: npm run build
 
-      - name: Smoke test
-        run: |
-          npm run start &
-          SERVER_PID=$!
+            - name: Smoke test
+              run: |
+                  npm run start &
+                  SERVER_PID=$!
 
-          trap "kill $SERVER_PID" EXIT
+                  trap "kill $SERVER_PID" EXIT
 
-          for i in {1..30}; do
-            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
-              echo "Route / is responding successfully."
-              exit 0
-            fi
+                  for i in {1..30}; do
+                    if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
+                      echo "Route / is responding successfully."
+                      exit 0
+                    fi
 
-            sleep 1
-          done
+                    sleep 1
+                  done
 
-          echo "Route / did not respond successfully."
-          exit 1
+                  echo "Route / did not respond successfully."
+                  exit 1
