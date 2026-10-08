@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.1.0...v0.2.0) (2026-10-08)
+
+
+### Features
+
+* build storefront foundation ([07191f0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/07191f020b5ad0156ee262ad6f37582fa42cfc7c))
+
 ## 0.1.0 (2026-10-08)
 
 
