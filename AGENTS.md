@@ -166,32 +166,25 @@ Cada responsabilidade deve possuir localização clara.
 
 # 6. Commerce
 
-Na V1, a Chouga não deve desenvolver seu próprio motor comercial.
+Na V1, a Chouga utilizará a **Nuvemshop como Commerce Provider**, conforme definido no ADR-001.
 
-A estratégia atual é utilizar uma plataforma de commerce madura.
+A Chouga não desenvolverá seu próprio motor comercial nesta fase.
 
-Candidatas em avaliação:
+A Nuvemshop será a autoridade para responsabilidades comerciais como:
 
-- Shopify;
-- Nuvemshop.
-
-A escolha ainda é uma decisão aberta.
-
-Não assumir uma delas como definitiva sem ADR aprovado.
-
-Critérios relevantes incluem:
-
-- operação brasileira;
-- Pix;
-- cartão;
-- frete;
-- APIs;
-- capacidade headless;
-- checkout;
+- produtos;
+- variantes;
+- preços;
 - estoque;
+- carrinho;
+- checkout;
 - pedidos;
-- experiência administrativa;
-- custo total de operação.
+
+conforme as capacidades efetivamente utilizadas pela integração.
+
+A Chouga continuará responsável pela experiência do storefront.
+
+A integração com a Nuvemshop deve permanecer atrás da fronteira `Commerce`, evitando que detalhes específicos do fornecedor se espalhem pela aplicação.
 
 Não duplicar a fonte de verdade comercial.
 
@@ -578,7 +571,8 @@ Considerar vigentes:
 
 - monólito modular;
 - storefront próprio;
-- plataforma Commerce pronta na V1;
+- Nuvemshop como Commerce Provider da V1;
+- React + TypeScript + Next.js com App Router;
 - Commerce e Editorial separados;
 - Wheels como experiência;
 - migração consciente do legado;
@@ -587,9 +581,7 @@ Considerar vigentes:
 
 ## Hipóteses ainda abertas
 
-- Shopify ou Nuvemshop;
 - Sanity como CMS editorial definitivo;
-- Next.js como framework;
 - estratégia de estilos;
 - estratégia final de hospedagem;
 - políticas detalhadas de `stocked` e `made_to_order`;
