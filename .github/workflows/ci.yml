@@ -38,3 +38,22 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Smoke test
+        run: |
+          npm run start &
+          SERVER_PID=$!
+
+          trap "kill $SERVER_PID" EXIT
+
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
+              echo "Route / is responding successfully."
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "Route / did not respond successfully."
+          exit 1
