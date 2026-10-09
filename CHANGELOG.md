@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.4.0...v0.5.0) (2026-10-09)
+
+
+### Features
+
+* refine footer visual identity ([#51](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/51)) ([f3f313b](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/f3f313b2dbdccd142e3979963de919a9f00358e3))
+
 ## [0.4.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.3.0...v0.4.0) (2026-10-08)
 
 
