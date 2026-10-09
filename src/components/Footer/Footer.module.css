@@ -1,11 +1,156 @@
 .footer {
     width: min(100% - (var(--page-padding) * 2), var(--content-width));
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 2rem 0 1.5rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.footerTop {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 2rem;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footerBrandName {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 800;
+    line-height: 0.78;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+}
+
+.footerBrandDescriptor {
+    margin-top: 0.75rem;
+    margin-left: clamp(1rem, 5vw, 5rem);
+
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.footerNav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+
+    padding-bottom: 0.5rem;
+}
+
+.footerNav a {
+    position: relative;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footerNav a::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+
+    height: 1px;
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 180ms ease;
+}
+
+.footerNav a:hover::after,
+.footerNav a:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.footerNav a:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 4px;
+}
+
+.footerBottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 
     border-top: 1px solid var(--border);
 
-    color: var(--muted);
-    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.footerMeta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footerMeta span:last-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    border: 1px solid var(--foreground);
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding-top: 1.5rem;
+    }
+
+    .footerTop {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .footerBrandName {
+        font-size: clamp(3.75rem, 19vw, 7rem);
+    }
+
+    .footerBrandDescriptor {
+        margin-left: 1rem;
+    }
+
+    .footerNav {
+        align-items: flex-start;
+    }
+
+    .footerBottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footerMeta {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
