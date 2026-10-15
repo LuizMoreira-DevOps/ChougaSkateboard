@@ -1,8 +1,9 @@
 .hero {
     position: relative;
 
-    width: 100%;
+    width: min(100% - (var(--page-padding) * 2), var(--content-width));
     min-height: 34rem;
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
