@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.5.0...v0.6.0) (2026-10-15)
+
+
+### Features
+
+* add featured products section ([#54](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/54)) ([4870557](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/4870557010df3d7d42810266760b7e565a230fe3))
+
 ## [0.5.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.4.0...v0.5.0) (2026-10-09)
 
 
