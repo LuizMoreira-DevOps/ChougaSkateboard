@@ -624,3 +624,18 @@ Construir tecnologia para:
 - evoluir.
 
 > Compramos commodity. Construímos identidade.
+
+---
+
+# 24. Diretriz operacional atual: demo da loja (15/10/2026)
+
+**Esta seção complementa as decisões permanentes acima; não revoga o ADR-001 nem autoriza mudanças estruturais.** Detalhes operacionais em `docs/HANDOFF.md`, `docs/ROADMAP.md` e `docs/commerce/INTEGRATION.md`.
+
+- Prioridade: MVP demonstrável **do storefront comercial** ao Dega. Blog, Editorial e Wheels ficam adiados.
+- A Nuvemshop continua como provedor comercial escolhido para a V1, mas assinatura e integração transacional dependem de validação futura. Não simular pagamentos, pedidos ou checkout real como se funcionassem.
+- O projeto legado `LuizMoreira-DevOps/chouga-online` utiliza Supabase compartilhado com a aplicação **em produção**. O seu reuso **somente leitura** na demo é uma **proposta condicionada** à auditoria e aprovação do ADR-003, não um novo banco nem uma migração aprovada.
+- Sem autorização explícita de Nando e análise de impacto, **não alterar** schema, migrations, tabelas, views, dados, RLS, grants, sync nem aplicação legada. Antes de qualquer mudança futura, preparar compatibilidade, backup, testes e rollback. Não usar `service_role` no navegador.
+- A Chouga 2.0 está atualmente publicada em **GitHub Pages com export estático**. Não projetar Route Handlers privados/Server Actions dinâmicas como se executassem nessa hospedagem. Rotas `[slug]` exigem geração estática; segredos não podem estar em bundles públicos.
+- Primeira fatia de código: contratos `Product`/`Variant`/`Money`, `CommerceProvider` mínimo, fixtures para teste/demo, auditoria de compatibilidade do Supabase e página de produto navegável e acessível. Carrinho virá em outra fatia.
+- Preservar as boas práticas aprendidas na Jungle Gaming: separação de responsabilidades, contratos tipados, testes relevantes, mocks controlados, acessibilidade, diagnósticos e CI. Não adicionar bibliotecas porque foram usadas em outro projeto.
+- **Ao encerrar a sessão, atualizar `docs/HANDOFF.md`** com estado real, commit, testes executados, pendências e próxima ação. Na próxima sessão, lê-lo antes de reabrir decisões.
