@@ -106,6 +106,6 @@ Quando o Dega aprovar investimento:
 
 - [ADR-001](../adr/ADR-001-commerce-provider.md): Nuvemshop como Commerce Provider;
 - [ADR-003 proposto](../adr/ADR-003-supabase-readonly-homologation.md): exceção de homologação;
-- [SECURITY](../../SECURITY.md): proteção do legado;
-- [ARCHITECTURE](../../ARCHITECTURE.md): fronteiras;
+- [SECURITY](../SECURITY.md): proteção do legado;
+- [ARCHITECTURE](../ARCHITECTURE.md): fronteiras;
 - [HANDOFF](../HANDOFF.md): próxima ação.

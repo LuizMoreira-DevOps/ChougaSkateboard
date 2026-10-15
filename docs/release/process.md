@@ -12,7 +12,7 @@ Uma release representa uma versão identificável do software.
 
 O deploy representa a disponibilização dessa versão em um ambiente.
 
-A estratégia de hospedagem e deploy será definida separadamente.
+A demonstração atual é publicada automaticamente no GitHub Pages após alterações na `main`. A hospedagem transacional definitiva ainda será definida.
 
 ---
 
@@ -66,7 +66,7 @@ Nesse modo, o Release Please gerencia:
 - cálculo da próxima versão;
 - criação e atualização da Release Pull Request;
 - CHANGELOG.md;
-- version.txt;
+- atualização do estado de versão no manifesto `.release-please-manifest.json`;
 - criação da tag;
 - criação do GitHub Release.
 O Release Please não realiza deploy da aplicação.
@@ -226,20 +226,13 @@ Ele registra o histórico das versões publicadas e suas principais alterações
 O changelog não deve ser mantido manualmente como uma segunda fonte de verdade.
 Alterações relevantes devem surgir do histórico de mudanças integrado à main.
 
-## 9. version.txt
+## 9. Estado de versão
 
-O arquivo:
-`version.txt`
-é mantido automaticamente pelo Release Please.
+A versão registrada pelo Release Please é acompanhada no arquivo `.release-please-manifest.json`.
 
-Ele representa a versão atualmente publicada da Chouga.
+O repositório não possui `version.txt` nesta etapa. Não presumir sua existência nem criá-lo sem necessidade aprovada.
 
-Esse arquivo não representa automaticamente:
-- versão de API;
-- versão de banco de dados;
-- versão de integração externa;
-- versão de contrato interno específico.
-Ele identifica a versão do projeto dentro do processo de release.
+A versão do projeto não representa automaticamente versões de API, banco de dados ou contratos de integrações externas.
 
 ## 10. Critérios para publicação
 Antes de mergear uma Release Pull Request, verificar quando aplicável:
@@ -288,44 +281,24 @@ v1.2.1
 ```
 
 ## 12. Release e deploy
-Release e deploy permanecem responsabilidades diferentes.
-Conceitualmente:
-```text
-Código integrado
-↓
-Release
-↓
-Deploy
-```
 
-No estado atual, criar um GitHub Release não implica automaticamente publicar a aplicação em produção.
-No futuro, o fluxo poderá evoluir para:
-```text
-GitHub Release
-↓
-CI/CD
-↓
-Deploy
-```
+Release e deploy são processos distintos.
 
-Essa automação somente deverá ser introduzida quando houver estratégia de hospedagem, ambientes e processo de entrega definidos.
+**Deploy demonstrativo atual:** qualquer push integrado à `main` aciona `.github/workflows/cd.yml`, que gera a exportação estática e publica no GitHub Pages.
 
-## 13. Primeira release
-A Chouga 2.0 ainda não possui uma release publicada.
+**Release:** o Release Please administra propostas de versão, tags, changelog e GitHub Releases conforme seus próprios critérios.
 
-A primeira versão deve representar um marco técnico ou de produto suficientemente significativo para ser identificado como uma versão real do projeto.
+Portanto, o deploy do storefront demonstrativo não depende da publicação de uma nova GitHub Release.
 
-Não criar uma release apenas para testar a automação ou gerar uma numeração.
+Esse fluxo poderá mudar quando a Chouga tiver hospedagem e operação comercial definitivas.
 
-O Release Please pode manter uma Release Pull Request aberta até que exista um momento adequado para publicação.
+## 13. Histórico e maturidade das releases
 
-Durante a fase inicial do projeto, versões `0.x.y` representam um produto ainda em evolução.
-A versão:
-```text
-v1.0.0
-```
+Em 15/10/2026, a Chouga 2.0 já possui releases de `v0.1.0` até `v0.6.0`.
 
-deverá representar um marco explícito de estabilidade da Chouga 2.0.
+As versões `0.x.y` representam uma aplicação ainda em evolução. O marco `v1.0.0` deverá corresponder a critérios explícitos de estabilidade e prontidão comercial.
+
+Não criar releases artificiais para cada mudança documental. Continuar utilizando Conventional Commits e revisão humana das Release Pull Requests.
 
 ## 14. Regra operacional
 

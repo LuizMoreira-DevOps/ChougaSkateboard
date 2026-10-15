@@ -65,5 +65,5 @@ No Pirate Battle, performance foi investigada por medições, cenários e separa
 
 - [Core Web Vitals](https://web.dev/articles/vitals)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview)
-- [Testing](docs/TESTING.md)
+- [Testing](TESTING.md)
 - [Accessibility](ACCESSIBILITY.md)
