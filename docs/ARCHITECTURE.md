@@ -87,7 +87,7 @@ Contrato de compatibilidade para a demo, se aprovado:
 
 A Chouga Basic Branca foi cadastrada em **uma loja Nuvemshop de homologação**, não necessariamente na base Supabase existente. Não afirmar que consta no catálogo legado. Escolher produto real da view ou usar fixture claramente identificada.
 
-Ver [INTEGRATION](docs/commerce/INTEGRATION.md) e [ADR-003 proposto](docs/adr/ADR-003-supabase-readonly-homologation.md).
+Ver [INTEGRATION](commerce/INTEGRATION.md) e [ADR-003 proposto](adr/ADR-003-supabase-readonly-homologation.md).
 
 ## 5. Publicação atual e limitações
 

@@ -4,7 +4,7 @@
 
 **Data do snapshot:** 15/10/2026.
 **Repositório alvo:** [`LuizMoreira-DevOps/ChougaSkateboard`](https://github.com/LuizMoreira-DevOps/ChougaSkateboard).
-**Branch conferida:** `main`. **Commit conferido:** `719c64fe468ce6c4ff113e010fdcb6cf5322f5a2`. **Release:** `v0.6.0`.
+**Branch conferida:** `main`. **Commit conferido:** `1ebd57ecf6f6af1ce2e23eb3719ce54301141058`. **Release:** `v0.6.0`.
 **Origem das evidências:** arquivos do GitHub e histórico de Actions. Não foi feita execução local, auditoria de Supabase ao vivo, teste manual do site publicado ou alteração de banco nesta etapa documental.
 
 ## 1. Qual é a missão
@@ -72,7 +72,7 @@ A Nuvemshop continua a escolha registrada no ADR-001 **para a operação da V1**
 - Build e publicação compatíveis com Pages; nenhuma dependência de backend invisível.
 - Testes relevantes passam **quando implementados e executados**; reportar o que não foi executado.
 
-Mais detalhes: [ROADMAP](ROADMAP.md), [TESTING](TESTING.md), [ARCHITECTURE](../ARCHITECTURE.md).
+Mais detalhes: [ROADMAP](ROADMAP.md), [TESTING](TESTING.md), [ARCHITECTURE](ARCHITECTURE.md).
 
 ## 7. Próximas decisões e bloqueios reais
 

@@ -60,5 +60,5 @@ Registrar resultado, ambiente, viewport, dispositivo e falhas na PR. Problemas q
 
 - [WCAG 2.2 (W3C)](https://www.w3.org/TR/WCAG22/)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
-- [docs/TESTING.md](docs/TESTING.md)
+- [docs/TESTING.md](TESTING.md)
 - [PERFORMANCE.md](PERFORMANCE.md)

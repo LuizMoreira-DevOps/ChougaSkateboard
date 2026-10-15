@@ -14,9 +14,9 @@
 
 ### F0 · Memória do projeto e decisões (DOCUMENTAÇÃO)
 
-- [ ] Reconciliar README/AGENTS/arquitetura com estado do Git e preparar PR documental.
+- [x] Reconciliar README/AGENTS/arquitetura com estado do Git e preparar PR documental (issue #56, PR #57).
 - [ ] Revisar proposta ADR-003 com Nando.
-- [ ] Confirmar baseline e próximo passo no HANDOFF.
+- [x] Confirmar baseline e próximo passo no HANDOFF.
 
 **Aceite:** qualquer colaborador consegue recuperar estado, próximos passos, comandos e riscos sem novo briefing.
 
