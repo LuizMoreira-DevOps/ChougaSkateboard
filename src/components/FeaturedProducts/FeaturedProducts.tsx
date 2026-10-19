@@ -1,37 +1,52 @@
+import type { StaticImageData } from "next/image";
+
 import { ProductCard } from "../ProductCard/ProductCard";
 import styles from "./FeaturedProducts.module.css";
 
+import basicBranca from "../../assets/products/camiseta-chouga-basic-branca.webp";
+import chougaWeed from "../../assets/products/camiseta-chouga-weed.webp";
+import chougaAzul from "../../assets/products/camiseta-chouga-azul.webp";
+import blusaBomb from "../../assets/products/blusa-chouga-bomb.webp";
+
 type FeaturedProduct = {
     name: string;
-    price: number;
+    price: number | null;
     category: string;
     index: string;
+    image: StaticImageData;
 };
+
+// Vitrine demonstrativa com fotografias do legado.
+// Valores não confirmados permanecem nulos.
 
 const featuredProducts: FeaturedProduct[] = [
     {
-        name: "Shape Chouga 8.0",
-        price: 349.9,
-        category: "Shape",
+        name: "Chouga Basic Branca",
+        price: 90,
+        category: "Camisa Basic",
         index: "01",
+        image: basicBranca,
     },
     {
-        name: "Camiseta Chouga Logo",
-        price: 149.9,
-        category: "Streetwear",
+        name: "Chouga Weed",
+        price: 100,
+        category: "Novo Drop",
         index: "02",
+        image: chougaWeed,
     },
     {
-        name: "Boné Chouga Classic",
-        price: 129.9,
-        category: "Acessórios",
+        name: "Chouga Basic Azul",
+        price: 90,
+        category: "Camisa Basic",
         index: "03",
+        image: chougaAzul,
     },
     {
-        name: "Moletom Chouga Heavy",
-        price: 299.9,
-        category: "Streetwear",
+        name: "Manga Comprida Chouga Bomber",
+        price: 150,
+        category: "Manga Comprida",
         index: "04",
+        image: blusaBomb,
     },
 ];
 
@@ -41,9 +56,8 @@ export function FeaturedProducts() {
             <div className={styles.sectionHeader}>
                 <div>
                     <p className={styles.sectionEyebrow}>Loja / Destaques</p>
-                    <h2 className={styles.sectionTitle}>
-                        Produtos em destaque
-                    </h2>
+
+                    <h2 className={styles.sectionTitle}>Drop em destaque</h2>
                 </div>
 
                 <span className={styles.sectionIndex} aria-hidden="true">
@@ -53,13 +67,7 @@ export function FeaturedProducts() {
 
             <div className={styles.productGrid}>
                 {featuredProducts.map((product) => (
-                    <ProductCard
-                        key={product.index}
-                        name={product.name}
-                        price={product.price}
-                        category={product.category}
-                        index={product.index}
-                    />
+                    <ProductCard key={product.index} {...product} />
                 ))}
             </div>
         </section>

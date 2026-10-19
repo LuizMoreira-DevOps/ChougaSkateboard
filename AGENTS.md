@@ -1,641 +1,135 @@
-# AGENTS.md — Chouga 2.0
+# AGENTS.md | CHOUGA SKATEBOARD
 
-Este arquivo define as regras permanentes de produto, engenharia e arquitetura da Chouga 2.0.
+> **Código com propósito. Arquitetura com consciência. Criatividade sem coleira.**
 
-As regras universais de colaboração com o Capitão continuam válidas.
+## 1. Identidade do projeto
 
-Documentação detalhada pertence a `docs/`. Este arquivo deve permanecer curto, estável e útil como contexto permanente.
+A Chouga não é apenas uma loja de skate.
 
----
+É uma marca que vive a rua, o skate, o streetwear e a cultura underground.
 
-# 1. Missão
+A Chouga V2.0 deve unir:
 
-A Chouga 2.0 é a plataforma digital de uma marca de skate, streetwear e cultura urbana.
+- **Atitude:** identidade autêntica, urbana e expressiva.
+- **Experiência:** comprar deve ser simples, intuitivo e confiável.
+- **Engenharia:** código organizado, modular e sustentável.
+- **Liberdade criativa:** experimentar faz parte do desenvolvimento.
 
-Ela combina duas dimensões:
+**Não reinventamos o comércio eletrônico. Reinventamos como a Chouga se expressa dentro dele.**
 
-- Commerce;
-- Culture.
+## 2. Filosofia de desenvolvimento
 
-O objetivo é construir uma plataforma capaz de vender produtos, representar a identidade Chouga, publicar conteúdo e evoluir sem repetir o crescimento desorganizado do legado.
+**Construir primeiro. Validar na prática. Documentar o necessário.**
 
-Princípio de produto:
+- Priorizar funcionalidades reais e experiências visuais.
+- Evitar abstrações prematuras e complexidade desnecessária.
+- Não criar processos apenas por formalidade.
+- Não introduzir dependências sem necessidade concreta.
+- Favorecer soluções simples, legíveis e fáceis de evoluir.
+- Permitir experimentação, refatoração e mudanças de direção.
 
-> Loja limpa. Conteúdo sujo. Engenharia limpa.
+Boas práticas são ferramentas, não obstáculos.
 
-Princípio técnico:
+## 3. Arquitetura e modularidade
 
-> Compramos commodity. Construímos identidade.
+Cada módulo deve ter responsabilidades claras.
 
----
+- Componentes devem manter seus estilos e recursos específicos organizados.
+- Cores, tipografia, espaçamentos e demais tokens compartilhados pertencem ao `globals.css`.
+- Estilos exclusivos pertencem aos respectivos CSS Modules.
+- Lógica reutilizável deve ser compartilhada quando existir uma necessidade real.
+- Evitar arquivos gigantes, responsabilidades misturadas e duplicação desnecessária.
+- Respeitar a estrutura existente antes de criar novas pastas ou abstrações.
 
-# 2. Papel do Capitão
+**Modularizar para facilitar, não para fragmentar.**
 
-Nando é o diretor do produto.
+## 4. Interface e experiência
 
-O agente atua como copiloto técnico, de produto e arquitetura.
+A direção visual da Chouga é **underground editorial**.
 
-O agente pode:
+- Visual autêntico, marcante e conectado à cultura skate.
+- Navegação comercial familiar, inspirada nas boas práticas do mercado.
+- Responsividade desde o início.
+- Acessibilidade como parte da implementação.
+- Performance considerada nas decisões visuais e técnicas.
+- Animações e efeitos devem enriquecer a experiência, nunca prejudicá-la.
 
-- analisar;
-- investigar;
-- comparar;
-- recomendar;
-- propor;
-- explicar.
+A identidade pode ser ousada. A usabilidade deve ser clara.
 
-Decisões relevantes de:
+## 5. Qualidade de código
 
-- produto;
-- negócio;
-- arquitetura;
-- design;
-- fornecedores;
-- escopo;
+- Utilizar TypeScript com tipagem adequada.
+- Preferir componentes coesos e responsabilidades bem definidas.
+- Tratar erros e estados de interface relevantes.
+- Evitar código morto, duplicações e soluções improvisadas permanentes.
+- Manter semântica HTML e acessibilidade.
+- Validar alterações com as ferramentas disponíveis no projeto.
+- Criar testes proporcionais ao risco e à complexidade da funcionalidade.
 
-devem ser apresentadas ao Capitão antes de mudanças estruturais.
+**Qualidade não significa complexidade.**
 
-O agente recomenda.
+## 6. Fluxo de trabalho
 
-O Capitão decide.
+O desenvolvimento deve seguir um ciclo simples:
 
----
+**Criar → Executar → Avaliar → Ajustar → Validar.**
 
-# 3. Legado
+- Trabalhar em branches para isolar mudanças.
+- Commits devem representar alterações coerentes.
+- Issues e pull requests são ferramentas opcionais conforme a necessidade.
+- Não exigir planejamento extenso para alterações pequenas.
+- Não expandir o escopo sem alinhamento com o desenvolvedor.
+- Não refatorar partes não relacionadas apenas por preferência arquitetural.
 
-A Chouga antiga é fonte de:
+O objetivo é manter o projeto evoluindo.
 
-- conhecimento;
-- regras;
-- conteúdo;
-- assets;
-- UX;
-- identidade;
-- aprendizados;
-- problemas já descobertos.
+## 7. Documentação
 
-Ela não é arquitetura obrigatória da nova aplicação.
+**Documentar o que existe, não tudo o que imaginamos construir.**
 
-Ao avaliar algo do legado, classificar quando relevante como:
+- Documentação deve ser curta, objetiva e útil.
+- Registrar decisões técnicas importantes quando necessário.
+- Explicar configurações ou comportamentos que não sejam evidentes no código.
+- Evitar documentos redundantes, relatórios obrigatórios e burocracia artificial.
+- Não exigir atualização documental para cada pequena alteração.
+- Não criar documentação espontaneamente sem necessidade ou solicitação.
 
-- Preservar;
-- Reprojetar;
-- Descartar;
-- Referência.
+O próprio código deve comunicar suas intenções sempre que possível.
 
-Não copiar automaticamente diretórios, componentes ou estruturas.
+## 8. Segurança e integrações
 
-Antes de reaproveitar código legado, entender:
+- Nunca expor credenciais ou segredos.
+- Não modificar sistemas ou bancos de produção sem autorização explícita.
+- Respeitar as responsabilidades dos serviços externos.
+- Não implementar infraestrutura comercial própria sem necessidade definida.
+- Preservar os sistemas existentes enquanto a V2.0 evolui.
 
-1. qual problema ele resolve;
-2. se o problema ainda existe;
-3. onde essa responsabilidade pertence na nova arquitetura;
-4. se vale reutilizar código ou apenas comportamento e conhecimento.
+## 9. Como o agente deve colaborar
 
----
+O agente é um parceiro técnico e criativo, não um gerente burocrático.
 
-# 4. Filosofia de engenharia
+Deve:
 
-Preferir:
+- Ouvir a intenção antes de propor soluções.
+- Focar exclusivamente no escopo solicitado.
+- Consultar o código existente antes de sugerir alterações.
+- Apresentar implementações práticas e verificáveis.
+- Explicar decisões importantes com objetividade.
+- Questionar escolhas quando houver riscos técnicos reais.
+- Respeitar as decisões criativas do desenvolvedor.
+- Não inventar testes executados, resultados ou funcionalidades concluídas.
+- Evitar listas intermináveis de tarefas e documentação não solicitada.
 
-- simplicidade;
-- modularidade;
-- baixo acoplamento;
-- alta coesão;
-- contratos claros;
-- composição;
-- segurança;
-- acessibilidade;
-- testabilidade;
-- manutenção;
-- performance medida.
-
-Evitar arquitetura especulativa.
-
-Não usar complexidade como símbolo de maturidade.
-
-Não introduzir tecnologia apenas porque ela é popular.
-
-Antes de adicionar dependência, serviço ou camada, explicar:
-
-1. qual problema resolve;
-2. por que a solução atual não é suficiente;
-3. qual complexidade adiciona;
-4. qual benefício concreto traz.
-
----
-
-# 5. Arquitetura
-
-A arquitetura inicial é um monólito modular.
-
-Domínios principais:
-
-- Commerce;
-- Editorial;
-- Brand;
-- Wheels.
-
-Integrações externas são adaptadores.
-
-Estrutura conceitual:
-
-```text
-App
-├── Commerce
-├── Editorial
-├── Brand
-├── Wheels
-└── Integrations
-```
-
-Commerce e Editorial devem permanecer desacoplados.
-
-A camada de aplicação pode compor informações dos dois.
-
-Evitar:
-
-- imports profundos entre módulos;
-- regras de negócio dentro de páginas;
-- acesso arbitrário a serviços externos;
-- `shared` como depósito de código sem dono.
-
-Cada responsabilidade deve possuir localização clara.
+**O agente ajuda a construir. Não assume o controle criativo do projeto.**
 
 ---
 
-# 6. Commerce
+## Princípio fundamental
 
-Na V1, a Chouga utilizará a **Nuvemshop como Commerce Provider**, conforme definido no ADR-001.
+**A Chouga nasceu da rua, não de um manual.**
 
-A Chouga não desenvolverá seu próprio motor comercial nesta fase.
+Queremos uma aplicação profissional, mas também queremos experimentar, errar, aprender, criar e evoluir.
 
-A Nuvemshop será a autoridade para responsabilidades comerciais como:
+A arquitetura deve sustentar a criatividade, nunca aprisioná-la.
 
-- produtos;
-- variantes;
-- preços;
-- estoque;
-- carrinho;
-- checkout;
-- pedidos;
-
-conforme as capacidades efetivamente utilizadas pela integração.
-
-A Chouga continuará responsável pela experiência do storefront.
-
-A integração com a Nuvemshop deve permanecer atrás da fronteira `Commerce`, evitando que detalhes específicos do fornecedor se espalhem pela aplicação.
-
-Não duplicar a fonte de verdade comercial.
-
----
-
-# 7. Fronteira Commerce
-
-A aplicação não deve ficar acoplada diretamente ao fornecedor comercial.
-
-O domínio trabalha com conceitos próprios, por exemplo:
-
-- Product;
-- Variant;
-- Collection;
-- Price;
-- Cart;
-- Order.
-
-Detalhes específicos do fornecedor devem permanecer em adaptadores.
-
-Conceitualmente:
-
-```text
-Chouga
-   ↓
-Commerce
-   ↓
-Commerce Provider
-```
-
-Não espalhar tipos, payloads ou regras específicas do fornecedor pelo restante da aplicação.
-
-Ao mesmo tempo, não construir uma abstração universal de commerce sem necessidade.
-
-A fronteira existe para proteger o domínio.
-
----
-
-# 8. Commerce próprio
-
-Um motor comercial próprio somente deve ser considerado diante de necessidade concreta.
-
-Exemplos:
-
-- limitações comprovadas da plataforma;
-- custos excessivos;
-- workflows específicos;
-- regras comerciais não atendidas;
-- operação suficientemente madura;
-- equipe capaz de manter estoque, pedidos, pagamentos e conciliação.
-
-Não desenvolver Commerce próprio como exercício técnico.
-
----
-
-# 9. Editorial
-
-Sanity é a hipótese atual de autoridade editorial.
-
-Conteúdos esperados incluem:
-
-- Article;
-- Athlete;
-- Event;
-- Author;
-- InstitutionalPage;
-- Campaign;
-- WheelsCuration.
-
-Preço e estoque não pertencem ao Editorial.
-
-Conteúdo jornalístico não pertence ao Commerce.
-
-Quando conteúdo referenciar produto, utilizar identificadores estáveis sem duplicar dados comerciais.
-
-Agenda deve ser derivada de eventos publicados, não mantida como segunda fonte de conteúdo.
-
----
-
-# 10. Wheels
-
-Wheels é uma experiência da marca.
-
-Pode ser:
-
-- experimental;
-- fotográfico;
-- texturizado;
-- irregular;
-- animado.
-
-Pode explorar:
-
-- atletas;
-- vídeos;
-- eventos;
-- spots;
-- arquivos;
-- fotografia;
-- xerox;
-- stickers;
-- halftone;
-- grain.
-
-Wheels não deve:
-
-- bloquear compra;
-- prejudicar acessibilidade;
-- tornar navegação confusa;
-- criar uma segunda fonte editorial;
-- carregar efeitos pesados globalmente.
-
----
-
-# 11. Design
-
-A experiência comercial deve utilizar padrões consolidados de e-commerce.
-
-Não reinventar sem necessidade:
-
-- navegação;
-- produto;
-- variante;
-- carrinho;
-- checkout;
-- filtros;
-- busca.
-
-A identidade Chouga aparece através de:
-
-- direção de arte;
-- tipografia;
-- fotografia;
-- movimento;
-- textura;
-- conteúdo.
-
-Direção visual:
-
-> 80% elegância, 20% sujeira.
-
-Textura é acento.
-
-Não estrutura.
-
----
-
-# 12. Design System
-
-Estabelecer fundamentos mínimos antes de multiplicar páginas.
-
-Definir progressivamente:
-
-- cores;
-- tipografia;
-- spacing;
-- grid;
-- breakpoints;
-- bordas;
-- radius;
-- motion;
-- foco;
-- estados.
-
-Primitivas reutilizáveis devem surgir conforme uso real.
-
-Preferir:
-
-> necessidade real → padrão identificado → abstração
-
-e evitar:
-
-> abstração → procurar onde utilizá-la
-
----
-
-# 13. Desenvolvimento
-
-Desenvolver por fatias verticais.
-
-Evitar construir todas as camadas antes de entregar comportamento real.
-
-Exemplo Commerce:
-
-```text
-produto real
-↓
-listagem
-↓
-detalhe
-↓
-variante
-↓
-carrinho
-↓
-checkout
-```
-
-Exemplo Editorial:
-
-```text
-evento
-↓
-agenda
-↓
-atleta
-↓
-matéria
-```
-
-Cada fatia deve validar:
-
-- arquitetura;
-- dados;
-- UX;
-- integração;
-- segurança;
-- testes relevantes.
-
----
-
-# 14. Produto e variantes
-
-Nunca assumir que produto significa roupa.
-
-O domínio deve conseguir representar diferentes tipos de produto.
-
-Não assumir universalmente:
-
-- cor;
-- tamanho.
-
-Um produto pode:
-
-- possuir várias opções;
-- possuir uma opção;
-- não possuir opções.
-
-Evitar gerar automaticamente todas as combinações possíveis.
-
-Somente variantes realmente existentes devem ser vendáveis.
-
----
-
-# 15. Stocked e made-to-order
-
-Distinguir claramente:
-
-- pronta entrega;
-- sob encomenda.
-
-Estoque zero não deve representar implicitamente disponibilidade ou indisponibilidade.
-
-As políticas comerciais precisam ser explícitas.
-
-Quando relevante, considerar:
-
-- prazo;
-- capacidade;
-- quantidade;
-- cancelamento;
-- comunicação ao cliente.
-
----
-
-# 16. Banco próprio
-
-Não criar Supabase/PostgreSQL apenas por antecipação.
-
-Enquanto:
-
-- Commerce estiver em uma plataforma externa;
-- Editorial estiver no Sanity;
-
-um banco adicional deve existir somente quando surgir um domínio concreto que precise dele.
-
----
-
-# 17. Business-first
-
-Arquitetura deve servir ao negócio.
-
-Antes de desenvolver uma funcionalidade, perguntar:
-
-- qual problema resolve?
-- qual valor entrega ao cliente?
-- é necessária para a V1?
-- quem opera isso depois?
-- qual custo de manutenção cria?
-- temos evidência da necessidade?
-
-Uma funcionalidade sem dono operacional está incompleta.
-
----
-
-# 18. SEO, acessibilidade e performance
-
-SEO faz parte da arquitetura.
-
-Considerar:
-
-- HTML indexável;
-- URLs estáveis;
-- redirects;
-- metadata;
-- canonical;
-- sitemap;
-- structured data;
-- links internos.
-
-Acessibilidade deve ser considerada desde o desenvolvimento.
-
-Objetivo: WCAG 2.2 AA quando aplicável.
-
-A identidade underground não justifica inacessibilidade.
-
-Commerce deve permanecer leve.
-
-Efeitos experimentais devem carregar apenas onde forem necessários.
-
-Medir antes de otimizar.
-
----
-
-# 19. Testes e validação
-
-Nenhuma implementação é concluída apenas porque aparentemente funciona.
-
-Aplicar validações proporcionais ao risco e à alteração.
-
-Podem incluir:
-
-- tipos;
-- lint;
-- testes unitários;
-- testes de integração;
-- testes de UI;
-- E2E;
-- inspeção visual;
-- responsividade;
-- acessibilidade;
-- performance;
-- segurança.
-
-Não criar testes apenas para aumentar cobertura.
-
-Proteger principalmente:
-
-- regras;
-- contratos;
-- jornadas críticas;
-- regressões conhecidas.
-
----
-
-# 20. Documentação e ADRs
-
-Documentação detalhada pertence a `docs/`.
-
-Decisões importantes devem ser registradas em ADRs curtos.
-
-Quando uma tarefa envolver decisão já documentada, consultar o ADR correspondente.
-
-Estrutura esperada:
-
-```text
-docs/
-├── product/
-├── architecture/
-├── business/
-├── marketing/
-└── adr/
-```
-
-Não duplicar grandes trechos desses documentos neste arquivo.
-
----
-
-# 21. Decisões e hipóteses atuais
-
-Considerar vigentes:
-
-## Decisões
-
-- monólito modular;
-- storefront próprio;
-- Nuvemshop como Commerce Provider da V1;
-- React + TypeScript + Next.js com App Router;
-- Commerce e Editorial separados;
-- Wheels como experiência;
-- migração consciente do legado;
-- desenvolvimento por fatias verticais;
-- não criar banco próprio sem necessidade concreta.
-
-## Hipóteses ainda abertas
-
-- Sanity como CMS editorial definitivo;
-- estratégia de estilos;
-- estratégia final de hospedagem;
-- políticas detalhadas de `stocked` e `made_to_order`;
-- escopo exato da V1.
-
-Hipótese não deve ser tratada como decisão definitiva.
-
----
-
-# 22. Fora de escopo inicial
-
-Não criar sem necessidade comprovada:
-
-- microserviços;
-- CQRS;
-- event sourcing;
-- event bus genérico;
-- multi-tenant;
-- framework interno;
-- plugin system;
-- recomendação por IA;
-- aplicativo mobile;
-- motor próprio de busca;
-- motor próprio de commerce;
-- infraestrutura especulativa.
-
----
-
-# 23. Regra de ouro
-
-Não construir tecnologia para provar capacidade técnica.
-
-Construir tecnologia para:
-
-- vender;
-- comunicar;
-- criar cultura;
-- operar bem;
-- aprender;
-- evoluir.
-
-> Compramos commodity. Construímos identidade.
-
----
-
-# 24. Diretriz operacional atual: demo da loja (15/10/2026)
-
-**Esta seção complementa as decisões permanentes acima; não revoga o ADR-001 nem autoriza mudanças estruturais.** Detalhes operacionais em `docs/HANDOFF.md`, `docs/ROADMAP.md` e `docs/commerce/INTEGRATION.md`.
-
-- Prioridade: MVP demonstrável **do storefront comercial** ao Dega. Blog, Editorial e Wheels ficam adiados.
-- A Nuvemshop continua como provedor comercial escolhido para a V1, mas assinatura e integração transacional dependem de validação futura. Não simular pagamentos, pedidos ou checkout real como se funcionassem.
-- O projeto legado `LuizMoreira-DevOps/chouga-online` utiliza Supabase compartilhado com a aplicação **em produção**. O seu reuso **somente leitura** na demo é uma **proposta condicionada** à auditoria e aprovação do ADR-003, não um novo banco nem uma migração aprovada.
-- Sem autorização explícita de Nando e análise de impacto, **não alterar** schema, migrations, tabelas, views, dados, RLS, grants, sync nem aplicação legada. Antes de qualquer mudança futura, preparar compatibilidade, backup, testes e rollback. Não usar `service_role` no navegador.
-- A Chouga 2.0 está atualmente publicada em **GitHub Pages com export estático**. Não projetar Route Handlers privados/Server Actions dinâmicas como se executassem nessa hospedagem. Rotas `[slug]` exigem geração estática; segredos não podem estar em bundles públicos.
-- Primeira fatia de código: contratos `Product`/`Variant`/`Money`, `CommerceProvider` mínimo, fixtures para teste/demo, auditoria de compatibilidade do Supabase e página de produto navegável e acessível. Carrinho virá em outra fatia.
-- Preservar as boas práticas aprendidas na Jungle Gaming: separação de responsabilidades, contratos tipados, testes relevantes, mocks controlados, acessibilidade, diagnósticos e CI. Não adicionar bibliotecas porque foram usadas em outro projeto.
-- **Ao encerrar a sessão, atualizar `docs/HANDOFF.md`** com estado real, commit, testes executados, pendências e próxima ação. Na próxima sessão, lê-lo antes de reabrir decisões.
+**Menos burocracia. Mais código. Mais skate. Mais Chouga.**

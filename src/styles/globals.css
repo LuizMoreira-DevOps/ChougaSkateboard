@@ -1,16 +1,61 @@
+/* =========================================
+   CHOUGA SKATEBOARD V2.0
+   GLOBAL DESIGN SYSTEM
+========================================= */
+
 :root {
+    /* CORES INSTITUCIONAIS CHOUGA */
+    --chouga-red: #d91a20;
+    --chouga-black: #000000;
+    --chouga-white: #ffffff;
+    --chouga-gray: #b9b9b9;
+
+    /* CORES BASE DA INTERFACE */
     --background: #f4f1ea;
     --foreground: #111111;
     --surface: #ffffff;
     --muted: #6f6f6f;
     --border: #d8d4cc;
 
+    /* IDENTIDADE E INTERAÇÃO */
+    --color-accent: var(--chouga-red);
+    --color-accent-hover: #b9151b;
+    --color-on-accent: var(--chouga-white);
+
+    /* SUPERFÍCIES EDITORIAIS */
+    --color-dark: #0e0e0e;
+    --color-on-dark: #fff9f3;
+
+    /* TIPOGRAFIA */
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --font-display: var(--font-sans);
 
+    /* ESCALA TIPOGRÁFICA */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+
+    /* ESPAÇAMENTOS */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+
+    /* LAYOUT */
     --page-padding: 1.5rem;
     --content-width: 1440px;
 }
+
+/* =========================================
+   RESET GLOBAL
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -31,6 +76,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* =========================================
+   ELEMENTOS GLOBAIS
+========================================= */
 
 a {
     color: inherit;
@@ -55,6 +104,10 @@ video {
     color: var(--background);
     background: var(--foreground);
 }
+
+/* =========================================
+   RESPONSIVIDADE GLOBAL
+========================================= */
 
 @media (min-width: 768px) {
     :root {
