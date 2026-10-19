@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import logoChouga from "./assets/logo-chouga-black.svg";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -9,8 +11,11 @@ export function Header() {
                 href="/"
                 aria-label="Chouga Skateboard - página inicial"
             >
-                <span className={styles.brandName}>CHOUGA</span>
-                <span className={styles.brandDescriptor}>Skateboard</span>
+                <Image
+                    src={logoChouga}
+                    alt="Logo Chouga Skateboard"
+                    className={styles.brandLogo}
+                />
             </Link>
 
             <nav className={styles.nav} aria-label="Navegação principal">

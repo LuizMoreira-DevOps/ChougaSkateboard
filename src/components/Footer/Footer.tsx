@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import logoChouga from "./assets/logo-chouga-white.svg";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -6,10 +8,11 @@ export function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footerTop}>
                 <div className={styles.footerBrand}>
-                    <span className={styles.footerBrandName}>CHOUGA</span>
-                    <span className={styles.footerBrandDescriptor}>
-                        Skateboard
-                    </span>
+                    <Image
+                        src={logoChouga}
+                        alt="Chouga Skateboard"
+                        className={styles.footerLogo}
+                    />
                 </div>
 
                 <nav

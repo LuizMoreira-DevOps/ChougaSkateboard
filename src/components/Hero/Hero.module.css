@@ -1,118 +1,317 @@
+/* =========================================
+   CHOUGA SKATEBOARD V2.0
+   HERO / UNDERGROUND EDITORIAL
+========================================= */
+
+/* CONTAINER PRINCIPAL */
+
 .hero {
     position: relative;
-
-    width: min(100% - (var(--page-padding) * 2), var(--content-width));
-    min-height: 34rem;
-    margin: 0 auto;
+    isolation: isolate;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
 
-    padding: 6rem 0;
+    width: min(calc(100% - var(--page-padding) * 2), var(--content-width));
+
+    min-height: clamp(35rem, 76svh, 54rem);
+    margin: 1.25rem auto 0;
+    padding: clamp(2rem, 6vw, 6rem);
+
+    overflow: hidden;
+
+    background: var(--color-dark);
+    color: var(--color-on-dark);
 }
+
+/* =========================================
+   IMAGEM EDITORIAL
+========================================= */
+
+.heroMedia,
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.heroMedia {
+    z-index: -2;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 54%;
+
+    filter: grayscale(100%) contrast(1.14);
+}
+
+.heroOverlay {
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9, 9, 9, 0.94) 0%,
+            rgba(9, 9, 9, 0.83) 34%,
+            rgba(9, 9, 9, 0.3) 76%,
+            rgba(9, 9, 9, 0.16) 100%
+        ),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent 30%);
+}
+
+/* =========================================
+   CONTEÚDO
+========================================= */
 
 .heroContent {
-    max-width: 64rem;
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 65rem;
+
+    padding: var(--spacing-12) 0 var(--spacing-16);
 }
+
+/* IDENTIFICAÇÃO EDITORIAL */
 
 .heroEyebrow {
-    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
 
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+
+    font-family: var(--font-mono), monospace;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.13em;
 }
 
+.heroDot {
+    flex: 0 0 auto;
+
+    width: 0.5rem;
+    height: 0.5rem;
+
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+/* TÍTULO PRINCIPAL */
+
 .heroTitle {
-    display: flex;
-    flex-direction: column;
+    max-width: 100%;
 
-    max-width: 10ch;
-
-    font-size: clamp(4rem, 11vw, 9.5rem);
-    font-weight: 800;
-    line-height: 0.78;
-    letter-spacing: -0.08em;
+    font-family: var(--font-display), Arial, sans-serif;
+    font-size: clamp(3.2rem, 7.5vw, 7.8rem);
+    font-weight: 900;
+    line-height: 0.93;
+    letter-spacing: -0.075em;
     text-transform: uppercase;
 }
 
 .heroTitle span {
-    margin-left: clamp(1.5rem, 6vw, 6rem);
+    color: var(--color-accent);
+}
 
-    font-family: var(--font-mono);
-    font-size: 0.28em;
-    font-weight: 600;
+/* ASSINATURA DA MARCA */
+
+.heroTagline {
+    margin-top: var(--spacing-8);
+
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+/* =========================================
+   CTA COMERCIAL
+========================================= */
+
+.heroCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    min-height: 3.5rem;
+    margin-top: 2.25rem;
+    padding: 0.95rem 1.25rem;
+
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: var(--text-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.heroCta span {
+    font-size: 1.3rem;
     line-height: 1;
+}
+
+.heroCta:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.heroCta:focus-visible {
+    outline: 3px solid var(--color-on-dark);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   ASSINATURA EDITORIAL INFERIOR
+========================================= */
+
+.heroBottom {
+    position: absolute;
+    right: clamp(2rem, 6vw, 6rem);
+    bottom: 1.5rem;
+    left: clamp(2rem, 6vw, 6rem);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+
+    padding-top: 0.8rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+    font-family: var(--font-mono), monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+}
+
+/* ÍNDICE EDITORIAL */
+
+.heroIndex {
+    position: absolute;
+    top: var(--spacing-8);
+    right: var(--spacing-8);
+    z-index: 2;
+
+    font-family: var(--font-mono), monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1.5;
     letter-spacing: 0.12em;
 }
 
-.heroTagline {
-    max-width: 32rem;
-    margin-top: 2.5rem;
+/* =========================================
+   TABLET
+========================================= */
 
-    color: var(--muted);
-
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.5;
-}
-
-.heroIndex {
-    align-self: flex-end;
-
-    padding-bottom: 0.75rem;
-
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-}
-
-.heroMeta {
-    width: min(100%, 32rem);
-    margin-top: 3rem;
-    padding-top: 1rem;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-
-    border-top: 1px solid var(--border);
-
-    font-family: var(--font-mono);
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hero {
-        min-height: auto;
-        padding: 4.5rem 0;
-
-        align-items: flex-start;
+        min-height: 39rem;
+        padding: var(--spacing-12);
     }
 
     .heroTitle {
-        font-size: clamp(3.5rem, 16vw, 6rem);
+        font-size: clamp(3.5rem, 9vw, 6rem);
     }
 
-    .heroTitle span {
-        margin-left: 1rem;
+    .heroBottom {
+        right: var(--spacing-12);
+        left: var(--spacing-12);
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+    .hero {
+        min-height: 38rem;
+        margin-top: var(--spacing-3);
+        padding: var(--spacing-8) var(--spacing-6);
+    }
+
+    .heroImage {
+        object-position: 58% center;
+    }
+
+    .heroOverlay {
+        background:
+            linear-gradient(90deg, rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.35)),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent 50%);
+    }
+
+    .heroContent {
+        padding: var(--spacing-12) 0 5rem;
+    }
+
+    .heroEyebrow {
+        font-size: 0.625rem;
+        letter-spacing: 0.07em;
+    }
+
+    .heroTitle {
+        font-size: clamp(2.45rem, 9vw, 4.5rem);
+        letter-spacing: -0.07em;
+    }
+
+    .heroTagline {
+        margin-top: 1.75rem;
+        font-size: 1.15rem;
+    }
+
+    .heroCta {
+        width: 100%;
+        max-width: 18rem;
+    }
+
+    .heroBottom {
+        right: var(--spacing-6);
+        bottom: 1.25rem;
+        left: var(--spacing-6);
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+
+        font-size: 0.55rem;
     }
 
     .heroIndex {
-        display: none;
+        top: 1.25rem;
+        right: 1.25rem;
+    }
+}
+
+/* =========================================
+   ACESSIBILIDADE / MOVIMENTO REDUZIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .heroCta {
+        transition: none;
     }
 
-    .heroMeta {
-        margin-top: 2rem;
-
-        flex-direction: column;
-        gap: 0.5rem;
+    .heroCta:hover {
+        transform: none;
     }
 }
