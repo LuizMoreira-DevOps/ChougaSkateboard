@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.6.0...v0.7.0) (2026-10-19)
+
+
+### Features
+
+* **storefront:** consolidate underground editorial home ([#60](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/60)) ([db2ee57](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/db2ee57eaf8a40f7f112d23dcb27cf7b99667ac6))
+
 ## [0.6.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.5.0...v0.6.0) (2026-10-15)
 
 
