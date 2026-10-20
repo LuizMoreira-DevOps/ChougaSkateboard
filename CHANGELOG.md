@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.7.0...v0.8.0) (2026-10-20)
+
+
+### Features
+
+* **catalog:** integrate Sanity CMS with transactional Supabase sync ([#63](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/63)) ([28f7aa9](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/28f7aa9a906dbb887c9c133806c645eddd974387))
+
 ## [0.7.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.6.0...v0.7.0) (2026-10-19)
 
 
