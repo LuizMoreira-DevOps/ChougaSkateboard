@@ -25,17 +25,16 @@ export function Hero() {
                 </p>
 
                 <h1 id="hero-title" className={styles.heroTitle}>
-                    A RUA
+                    STREETWEAR
                     <br />
-                    NÃO PEDE
+                    NÃO SE VESTE
+                    <span>.</span>
                     <br />
-                    <span>LICENÇA.</span>
+                    <span>SE VIVE</span>!
                 </h1>
 
                 <p className={styles.heroTagline}>
-                    Skate no sangue.
-                    <br />
-                    Sempre no pé.
+                    Underground skatewear culture.
                 </p>
 
                 <a className={styles.heroCta} href="#loja">
@@ -45,8 +44,8 @@ export function Hero() {
             </div>
 
             <div className={styles.heroBottom}>
-                <span>STREETWEAR NÃO SE VESTE. SE VIVE.</span>
-                <span>SKATE / STREET / CULTURA</span>
+                <span>FEITO NAS RUAS. PARA QUEM VIVE O CORRE.</span>
+                <span>SKATE / STREET / CULTURA / FAMÍLIA </span>
             </div>
 
             <span className={styles.heroIndex} aria-hidden="true">

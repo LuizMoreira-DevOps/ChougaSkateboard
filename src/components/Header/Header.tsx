@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+
+import { CartDrawer } from "../CartDrawer/CartDrawer";
+
 import logoChouga from "./assets/logo-chouga-black.svg";
 import styles from "./Header.module.css";
 
@@ -18,11 +21,15 @@ export function Header() {
                 />
             </Link>
 
-            <nav className={styles.nav} aria-label="Navegação principal">
-                <Link href="/#loja">Loja</Link>
-                <Link href="/#cultura">Cultura</Link>
-                <Link href="/#wheels">Wheels</Link>
-            </nav>
+            <div className={styles.actions}>
+                <nav className={styles.nav} aria-label="Navegação principal">
+                    <Link href="/loja">Loja</Link>
+                    <Link href="/#cultura">Cultura</Link>
+                    <Link href="/#wheels">Wheels</Link>
+                </nav>
+
+                <CartDrawer />
+            </div>
         </header>
     );
 }

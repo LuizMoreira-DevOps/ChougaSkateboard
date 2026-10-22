@@ -1,188 +1,161 @@
-/* CHOUGA / FOOTER */
+/* CHOUGA / VISUAL FIRST 003 */
 
 .footer {
     width: 100%;
     margin-top: 0;
+    padding-block: clamp(1.75rem, 3vw, 2.5rem) 1.25rem;
 
-    padding: clamp(3rem, 6vw, 6rem) 0 1.5rem;
-
-    border-top: 4px solid var(--color-accent);
-
+    border-top: 3px solid var(--color-accent);
     background: var(--color-dark);
     color: var(--color-on-dark);
 }
 
-/* Container interno compartilhado */
-
 .footerTop,
 .footerBottom {
     width: min(calc(100% - var(--page-padding) * 2), var(--content-width));
-
     margin-inline: auto;
 }
 
-/* Composição principal */
+/* Marca e navegação */
 
 .footerTop {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    gap: var(--spacing-8);
+    align-items: center;
+    gap: 1.5rem clamp(2rem, 5vw, 4rem);
 }
 
-/* Marca */
-
 .footerBrand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     min-width: 0;
 }
 
 .footerLogo {
     display: block;
-    width: clamp(17rem, 50vw, 34rem);
+    width: clamp(13rem, 24vw, 19rem);
     max-width: 100%;
     height: auto;
 }
 
-/* Navegação */
-
 .footerNav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--spacing-3);
-
-    padding-bottom: var(--spacing-2);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem clamp(1.25rem, 3vw, 2.5rem);
+    min-width: 0;
 }
 
 .footerNav a {
-    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
 
+    color: inherit;
     font-family: var(--font-sans);
-    font-size: var(--text-sm);
+    font-size: 0.8125rem;
     font-weight: 800;
+    line-height: 1.4;
     letter-spacing: 0.06em;
+    text-decoration: none;
     text-transform: uppercase;
 
-    transition: color 180ms ease;
+    text-underline-offset: 0.35em;
+    text-decoration-thickness: 2px;
 }
 
-.footerNav a:hover {
-    color: var(--color-accent);
+.footerNav a:hover,
+.footerNav a:focus-visible {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-accent);
 }
 
 .footerNav a:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 5px;
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
-/* Faixa inferior */
+/* Assinatura e origem */
 
 .footerBottom {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-4);
+    gap: 0.75rem 1.5rem;
 
-    margin-top: clamp(2rem, 5vw, 4rem);
-    padding-top: var(--spacing-4);
-
+    margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.25);
 
     font-family: var(--font-mono);
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.footerBottom p {
+    margin: 0;
 }
 
 .footerMeta {
     display: flex;
     align-items: center;
-    gap: var(--spacing-8);
+    gap: clamp(1rem, 3vw, 2rem);
 }
 
-.footerMeta span:last-child {
+.footerStamp {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 
-    width: 2.5rem;
-    height: 2.5rem;
-
+    width: 2.25rem;
+    height: 2.25rem;
     border: 1px solid var(--color-accent);
     border-radius: 50%;
 
-    color: var(--color-accent);
+    color: var(--color-on-dark);
     font-weight: 800;
-
+    line-height: 1;
+    letter-spacing: 0;
     transform: rotate(-8deg);
 }
 
-/* Tablet */
-
-@media (max-width: 900px) {
-    .footerTop {
-        grid-template-columns: 1fr;
-        align-items: start;
-        gap: var(--spacing-6);
-    }
-
-    .footerNav {
-        align-items: flex-start;
-        gap: var(--spacing-2);
-    }
-
-    .footerBottom {
-        flex-direction: column;
-        gap: var(--spacing-4);
-    }
-
-    .footerMeta {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
-/* Mobile */
+/* Marca acima; navegação permanece compacta */
 
 @media (max-width: 640px) {
-    .footer {
-        padding-top: var(--spacing-12);
+    .footerTop {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
     }
 
-    .footerTop {
-        grid-template-columns: 1fr;
-        align-items: start;
-        gap: var(--spacing-12);
+    .footerLogo {
+        width: clamp(13rem, 60vw, 17rem);
     }
 
     .footerNav {
-        align-items: flex-start;
-        gap: var(--spacing-4);
-    }
-
-    .footerNav a {
-        font-size: var(--text-xs);
+        justify-content: flex-start;
+        column-gap: 1.5rem;
     }
 
     .footerBottom {
+        margin-top: 1.25rem;
+    }
+}
+
+/* Origem ocupa uma linha própria em telas estreitas */
+
+@media (max-width: 420px) {
+    .footerBottom {
         align-items: flex-start;
         flex-direction: column;
-        gap: var(--spacing-6);
     }
 
     .footerMeta {
         width: 100%;
         justify-content: space-between;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .footerNav a {
-        transition: none;
     }
 }

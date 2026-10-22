@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     ...(isGitHubPages && {
         output: "export",
         basePath: "/ChougaSkateboard",
+        trailingSlash: true,
         images: {
             unoptimized: true,
         },
