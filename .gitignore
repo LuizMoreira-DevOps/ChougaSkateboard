@@ -35,3 +35,7 @@ Thumbs.db
 # Editors
 .vscode/
 .idea/
+
+# Playwright artifacts
+playwright-report/
+test-results/
