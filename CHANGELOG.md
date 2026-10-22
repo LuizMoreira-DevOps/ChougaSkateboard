@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.8.0...v0.9.0) (2026-10-22)
+
+
+### Features
+
+* **storefront:** implementa catalogo, masonry, filtros e sacola ([#66](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/66)) ([986329e](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/986329ed496bd363dc45eadd1fbcb630445e5123)), closes [#65](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/65)
+
 ## [0.8.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.7.0...v0.8.0) (2026-10-20)
 
 
