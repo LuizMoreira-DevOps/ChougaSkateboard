@@ -1,0 +1,70 @@
+/* CHOUGA / LOJA / MASONRY EDITORIAL */
+.grid {
+    --columns: 4;
+    --masonry-gap: 24px;
+    --product-image-ratio: 4 / 5;
+    --product-card-fit: cover;
+    --product-card-name-size: clamp(0.875rem, 1.3vw, 1.125rem);
+    --product-card-name-gap: 0.75rem;
+
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    column-gap: clamp(0.75rem, 1.5vw, 1.5rem);
+    row-gap: var(--masonry-gap);
+    align-items: start;
+
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.grid[data-filters-open="true"] {
+    --columns: 3;
+}
+
+/* Uma linha CSS equivale a 1px; o JS mede as alturas reais. */
+.grid[data-measured="true"] {
+    grid-auto-rows: 1px;
+    row-gap: 0;
+}
+
+.item {
+    min-width: 0;
+    align-self: start;
+}
+
+.content {
+    display: flow-root;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Variação da largura, sem distorcer a proporção 4:5 das fotos. */
+.item:nth-child(4n + 2) .content {
+    margin-inline: 4%;
+}
+
+.item:nth-child(4n + 3) .content {
+    margin-inline-end: 3%;
+}
+
+@media (max-width: 900px) {
+    .grid,
+    .grid[data-filters-open="true"] {
+        --columns: 2;
+        --masonry-gap: 18px;
+    }
+
+    .item:nth-child(4n + 2) .content {
+        margin-inline: 2%;
+    }
+}
+
+@media (max-width: 380px) {
+    .grid,
+    .grid[data-filters-open="true"] {
+        column-gap: 0.625rem;
+        --product-card-name-size: 0.8125rem;
+    }
+}

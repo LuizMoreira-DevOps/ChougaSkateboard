@@ -26,11 +26,13 @@ export function Footer() {
             </div>
 
             <div className={styles.footerBottom}>
-                <p>Skate · Streetwear · Cultura</p>
+                <p>Skate · Streetwear · Cultura · Família </p>
 
                 <div className={styles.footerMeta}>
                     <span>Curitiba / BR</span>
-                    <span aria-hidden="true">041</span>
+                    <span className={styles.footerStamp} aria-hidden="true">
+                        041
+                    </span>
                 </div>
             </div>
         </footer>

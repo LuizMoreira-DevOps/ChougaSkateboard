@@ -1,23 +1,37 @@
+/* =========================================
+    CHOUGA / FEATURED PRODUCTS
+    VISUAL FIRST 002
+========================================= */
+
 .featuredProducts {
-    width: min(100% - (var(--page-padding) * 2), var(--content-width));
+    width: min(calc(100% - var(--page-padding) * 2), var(--content-width));
+
     margin: 0 auto;
-    padding: 6rem 0;
+
+    padding: 0 0 clamp(1.5rem, 3vw, 3rem);
 }
+
+/* =========================================
+    HEADER
+    ========================================= */
 
 .sectionHeader {
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
 
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
+    margin-top: 0.45rem;
+    padding-top: 0.45rem;
+
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
 
     border-bottom: 1px solid var(--border);
 }
 
 .sectionEyebrow {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
 
     font-family: var(--font-mono);
     font-size: 0.625rem;
@@ -27,75 +41,303 @@
 }
 
 .sectionTitle {
-    max-width: 12ch;
+    max-width: none;
 
-    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-size: clamp(2rem, 3.4vw, 3.5rem);
     font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.06em;
+    line-height: 0.95;
+    letter-spacing: -0.065em;
     text-transform: uppercase;
 }
 
 .sectionIndex {
+    display: grid;
+    place-items: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
     flex-shrink: 0;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 3rem;
-    height: 3rem;
 
     border: 1px solid var(--foreground);
     border-radius: 50%;
 
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
 
     transform: rotate(7deg);
 }
 
+/* =========================================
+    GRADE EDITORIAL / BAGUNÇA ORGANIZADA
+========================================= */
+
 .productGrid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
+    align-items: start;
+
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
+
+    padding: 0.75rem 0 0;
+
+    --product-image-ratio: 4 / 5;
+    --product-card-fit: cover;
+    --product-card-name-size: clamp(1rem, 1.3vw, 1.25rem);
+    --product-card-name-gap: 0.65rem;
 }
 
-.productGrid > :nth-child(even) {
-    margin-top: 3rem;
+/* Produto 02: levemente abaixo */
+.productGrid > :nth-child(2):not(.shopCard) {
+    transform: translateY(0.85rem);
 }
+
+/* Produto 03: levemente acima */
+.productGrid > :nth-child(3):not(.shopCard) {
+    transform: translateY(-0.65rem);
+}
+
+/* Um produto + loja: duas colunas */
+.productGrid[data-count="1"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Dois produtos + loja: quatro colunas */
+.productGrid[data-count="2"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Terceira e quarta colunas para o acesso à loja */
+.productGrid[data-count="2"] .shopCard {
+    grid-column: span 2;
+}
+
+/* Três produtos + loja: quatro colunas iguais */
+.productGrid[data-count="3"] .shopCard {
+    grid-column: span 1;
+}
+
+/* =========================================
+    CARD DE ACESSO À LOJA
+========================================= */
+
+.shopCard {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
+
+    grid-column: auto;
+    align-self: stretch;
+
+    min-width: 0;
+    min-height: 100%;
+
+    padding: clamp(1.25rem, 2.5vw, 2.5rem);
+
+    overflow: hidden;
+
+    background: var(--color-dark);
+    color: var(--color-on-dark);
+    border: 1px solid var(--color-dark);
+
+    text-decoration: none;
+
+    transition: background-color 180ms ease;
+}
+
+/* Assinatura de Curitiba, discreta ao fundo */
+
+.shopCard::before {
+    content: "041";
+
+    position: absolute;
+    top: 12%;
+    right: -0.05em;
+    z-index: -1;
+
+    font-family: var(--font-display), Arial, sans-serif;
+    font-size: clamp(7rem, 16vw, 17rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.09em;
+
+    color: rgba(255, 255, 255, 0.035);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.productGrid[data-count="3"] .shopCard,
+.productGrid[data-count="4"] .shopCard {
+    grid-column: span 1;
+}
+
+.shopEyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #c7c7c7;
+}
+
+/* Centro do card */
+
+.shopCenter {
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+
+    min-width: 0;
+}
+
+.shopTitle {
+    max-width: 100%;
+
+    font-family: var(--font-display), Arial, sans-serif;
+    font-size: clamp(1.8rem, 2.8vw, 3.5rem);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.shopTitle span {
+    color: var(--color-accent);
+}
+
+.shopDescription {
+    max-width: 28ch;
+
+    color: #c7c7c7;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Rodapé do card */
+
+.shopFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+
+    font-family: var(--font-mono), monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.shopFooter span:first-child {
+    color: var(--color-on-dark);
+}
+
+.shopFooter span:last-child {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+
+    transition: transform 180ms ease;
+}
+
+.shopCard:hover {
+    background: #222;
+}
+
+.shopCard:hover .shopFooter span:last-child {
+    transform: translate(3px, -3px);
+}
+
+.shopCard:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shopCard,
+    .shopFooter span:last-child {
+        transition: none;
+    }
+
+    .shopCard:hover .shopFooter span:last-child {
+        transform: none;
+    }
+}
+
+/* =========================================
+    MENSAGENS
+========================================= */
+
+.catalogMessage {
+    padding: 1.5rem 0;
+
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+    TABLET
+    ========================================= */
 
 @media (max-width: 1024px) {
-    .productGrid {
+    .productGrid,
+    .productGrid[data-count="1"],
+    .productGrid[data-count="2"],
+    .productGrid[data-count="3"] {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .productGrid > :nth-child(2):not(.shopCard),
+    .productGrid > :nth-child(3):not(.shopCard) {
+        transform: none;
+    }
+
+    .shopCard,
+    .productGrid[data-count="2"] .shopCard,
+    .productGrid[data-count="3"] .shopCard {
+        grid-column: auto;
+        min-height: 220px;
+    }
+
+    /* Dois produtos: loja ocupa a linha inteira */
+    .productGrid[data-count="2"] .shopCard {
+        grid-column: 1 / -1;
     }
 }
 
+/* =========================================
+    MOBILE
+    ========================================= */
+
 @media (max-width: 640px) {
-    .featuredProducts {
-        padding: 4.5rem 0;
+    .productGrid,
+    .productGrid[data-count="1"],
+    .productGrid[data-count="2"],
+    .productGrid[data-count="3"] {
+        grid-template-columns: minmax(0, 1fr);
+
+        --product-image-ratio: 4 / 5;
     }
 
-    .sectionHeader {
-        align-items: flex-start;
-    }
-
-    .sectionTitle {
-        font-size: clamp(2.5rem, 12vw, 4rem);
-    }
-
-    .sectionIndex {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .productGrid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .productGrid > :nth-child(even) {
-        margin-top: 0;
+    .shopCard,
+    .productGrid[data-count="2"] .shopCard,
+    .productGrid[data-count="3"] .shopCard {
+        grid-column: auto;
+        min-height: 220px;
     }
 }

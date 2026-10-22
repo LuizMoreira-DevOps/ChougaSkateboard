@@ -5,7 +5,7 @@
 
     width: min(calc(100% - var(--page-padding) * 2), var(--content-width));
 
-    min-height: 6rem;
+    min-height: var(--header-height);
     margin: 0 auto;
 
     display: flex;
@@ -124,11 +124,18 @@
     outline-offset: 4px;
 }
 
+.actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
+    min-width: 0;
+}
+
 /* Mobile */
 
 @media (max-width: 640px) {
     .header {
-        min-height: auto;
+        min-height: var(--header-height);
         padding: var(--spacing-4) 0 var(--spacing-3);
 
         flex-direction: column;
@@ -152,6 +159,26 @@
 
     .nav a:first-child {
         padding: 0.625rem 1rem;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .actions .nav {
+        width: auto;
+        flex: 1;
+        gap: 0.6rem;
+    }
+
+    .actions .nav a {
+        font-size: 0.625rem;
+    }
+
+    .actions .nav a:first-child {
+        padding: 0.6rem 0.75rem;
     }
 }
 

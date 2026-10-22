@@ -5,7 +5,7 @@
 
 :root {
     /* CORES INSTITUCIONAIS CHOUGA */
-    --chouga-red: #d91a20;
+    --chouga-red: #850a0e;
     --chouga-black: #000000;
     --chouga-white: #ffffff;
     --chouga-gray: #b9b9b9;
@@ -19,7 +19,7 @@
 
     /* IDENTIDADE E INTERAÇÃO */
     --color-accent: var(--chouga-red);
-    --color-accent-hover: #b9151b;
+    --color-accent-hover: #580003;
     --color-on-accent: var(--chouga-white);
 
     /* SUPERFÍCIES EDITORIAIS */
