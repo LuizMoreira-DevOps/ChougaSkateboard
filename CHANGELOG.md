@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.9.0...v0.9.1) (2026-10-22)
+
+
+### Bug Fixes
+
+* **storefront:** improve accessibility and add regression tests ([#69](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/issues/69)) ([6cd2736](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/commit/6cd27366c034930e1e3cf5f3e07d3514bb4cec91))
+
 ## [0.9.0](https://github.com/LuizMoreira-DevOps/ChougaSkateboard/compare/v0.8.0...v0.9.0) (2026-10-22)
 
 
