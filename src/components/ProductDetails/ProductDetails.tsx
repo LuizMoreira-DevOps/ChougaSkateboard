@@ -127,7 +127,11 @@ export function ProductDetails() {
             const total = addToCart(product, selectedVariant, quantity);
             window.dispatchEvent(new Event(CART_OPEN_EVENT));
 
-            setFeedback(`Adicionado à sacola. ${total} unidade(s) deste SKU.`);
+            setFeedback(
+                `Adicionado à sacola. Agora são ${total} ${
+                    total === 1 ? "unidade" : "unidades"
+                } deste produto.`,
+            );
         } catch (error) {
             setFeedback(
                 error instanceof Error
@@ -324,7 +328,7 @@ export function ProductDetails() {
                                 : !selectedSize
                                   ? "Escolha um tamanho para consultar a disponibilidade"
                                   : available
-                                    ? `${stock} unidade(s) disponível(is)`
+                                    ? `${stock} ${stock === 1 ? "unidade disponível" : "unidades disponíveis"}`
                                     : "Variação indisponível"}
                         </p>
 

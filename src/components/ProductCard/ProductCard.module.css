@@ -159,3 +159,30 @@
     outline: 3px solid var(--color-accent);
     outline-offset: 5px;
 }
+
+@media (max-width: 380px) {
+    .productMeta {
+        align-items: flex-start;
+        gap: 0.35rem;
+        font-size: 0.5625rem;
+        letter-spacing: 0.04em;
+    }
+
+    .productMeta span:first-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .productMeta span:last-child {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .productImage > span {
+        right: 0.5rem;
+        bottom: 0.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}

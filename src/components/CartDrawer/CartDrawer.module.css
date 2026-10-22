@@ -533,3 +533,59 @@
         transition: none;
     }
 }
+
+@media (max-height: 700px) {
+    .heading {
+        padding-top: 1rem;
+        padding-bottom: 0.85rem;
+    }
+
+    .headingMain {
+        margin-top: 1rem;
+    }
+
+    .headingCount {
+        margin-top: 0.85rem;
+    }
+
+    .content {
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+    }
+
+    .empty {
+        padding: 0.25rem 0;
+    }
+
+    .empty strong {
+        margin-top: 0.45rem;
+        font-size: clamp(1.55rem, 4.5vh, 2.2rem);
+    }
+
+    .empty p {
+        margin-top: 0.5rem;
+    }
+
+    .empty a {
+        margin-top: 0.7rem;
+    }
+
+    .footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .footerNote {
+        margin-top: 0.5rem;
+    }
+
+    .checkout {
+        min-height: 44px;
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .continue {
+        margin-top: 0.5rem;
+    }
+}

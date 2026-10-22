@@ -162,7 +162,34 @@ export function addToCart(
     const nextQuantity = (existing?.quantity ?? 0) + quantity;
 
     if (nextQuantity > stock) {
-        throw new Error(`Disponíveis apenas ${stock} unidade(s) deste SKU.`);
+        const currentQuantity = existing?.quantity ?? 0;
+        const remaining = Math.max(0, stock - currentQuantity);
+
+        if (currentQuantity >= stock) {
+            throw new Error(
+                `Você já possui ${currentQuantity} ${
+                    currentQuantity === 1 ? "unidade" : "unidades"
+                } deste produto na sacola. O limite disponível é de ${stock} ${
+                    stock === 1 ? "unidade" : "unidades"
+                }.`,
+            );
+        }
+
+        if (currentQuantity > 0) {
+            throw new Error(
+                `Você já possui ${currentQuantity} ${
+                    currentQuantity === 1 ? "unidade" : "unidades"
+                } na sacola. É possível adicionar mais ${remaining} ${
+                    remaining === 1 ? "unidade" : "unidades"
+                }.`,
+            );
+        }
+
+        throw new Error(
+            `Estoque disponível: ${stock} ${
+                stock === 1 ? "unidade" : "unidades"
+            }. Reduza a quantidade selecionada.`,
+        );
     }
 
     if (!existing && items.length >= MAX_CART_LINES) {
